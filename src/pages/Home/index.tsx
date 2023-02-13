@@ -30,6 +30,7 @@ export function Home() {
 
   return (
     <Container>
+      <h1>MegaAiAssistant</h1>
       <textarea
         value={text}
         onChange={(e) => {
