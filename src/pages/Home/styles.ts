@@ -7,10 +7,9 @@ export const Container = styled.main`
 `;
 
 export const Header = styled.header`
-  background-color: ${({ theme }) => theme.currentLine};
   height: 34px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 2%;
   margin-bottom: 40%;
 `;
