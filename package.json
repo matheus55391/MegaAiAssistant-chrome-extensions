@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && copy manifest.json dist\\manifest.json",
-    "build:watch": "tsc -w & vite build --watch & copy manifest.json dist\\manifest.json --watch",
     "preview": "vite preview"
   },
   "dependencies": {
