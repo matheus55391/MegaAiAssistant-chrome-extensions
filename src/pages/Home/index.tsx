@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container } from "./styles";
+import { Container, Header } from "./styles";
 import { useSpeechSynthesis } from 'react-speech-kit';
 import axios from "axios";
 import { openai } from "../../config/openai";
 
+import styled from "styled-components";
 export function Home() {
   const [text, setText] = useState('')
   const {speak, isPlaying} = useSpeechSynthesis()
@@ -30,7 +31,9 @@ export function Home() {
 
   return (
     <Container>
-      <h1>MegaAiAssistant</h1>
+      <Header>
+        <h3>MegaAiAssistant</h3>
+      </Header>
       <textarea
         value={text}
         onChange={(e) => {
