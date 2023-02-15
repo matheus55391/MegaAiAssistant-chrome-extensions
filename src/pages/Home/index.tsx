@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Header } from "./styles";
+import { Container, Navbar } from "./styles";
 import { useSpeechSynthesis } from 'react-speech-kit';
 import axios from "axios";
 import { openai } from "../../config/openai";
@@ -31,9 +31,9 @@ export function Home() {
 
   return (
     <Container>
-      <Header>
+      <Navbar>
         <h3>MegaAiAssistant</h3>
-      </Header>
+      </Navbar>
       <textarea
         value={text}
         onChange={(e) => {
