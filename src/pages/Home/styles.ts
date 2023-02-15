@@ -6,7 +6,7 @@ export const Container = styled.main`
     flex-direction: column;
 `;
 
-export const Header = styled.header`
+export const Navbar = styled.header`
   height: 34px;
   display: flex;
   align-items: center;
