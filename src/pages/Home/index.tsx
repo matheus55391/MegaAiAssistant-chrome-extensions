@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Navbar } from "./styles";
+import { BottomWrapper, Button, ButtonIcon, Container, Input, Navbar, PageTitle } from "./styles";
 import { useSpeechSynthesis } from 'react-speech-kit';
 import axios from "axios";
 import { openai } from "../../config/openai";
 
-import styled from "styled-components";
 export function Home() {
   const [text, setText] = useState('')
   const {speak, isPlaying} = useSpeechSynthesis()
@@ -32,21 +31,30 @@ export function Home() {
   return (
     <Container>
       <Navbar>
-        <h3>MegaAiAssistant</h3>
+        <PageTitle>MEGAAIASSISTANT</PageTitle>
       </Navbar>
-      <textarea
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value)
-        }}
-        disabled={isPlaying || isLoading}
-      />
-      {
-        isPlaying || isLoading?
-          <button disabled>CARREGANDO...</button> 
-        :
-          <button onClick={handleClick}>Pesquisar</button>
-      }
+
+
+
+      <BottomWrapper>
+        <Input
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value)
+          }}
+          type={"text"}
+          disabled={isPlaying || isLoading}
+          placeholder={"Digite sua pergunta"}
+        />
+        {
+          isPlaying || isLoading?
+            <Button disabled>CARREGANDO...</Button> 
+          :
+            <Button onClick={handleClick}>
+              <ButtonIcon/>
+            </Button>
+        }
+      </BottomWrapper>
     </Container>
   )
 }
