@@ -22,7 +22,7 @@ export const PageTitle = styled.h3``
 export const BottomWrapper = styled.div`
   display: flex;
   margin-top: auto;
-  padding: 10px;
+  padding: 8px;
   height: 60px;
   background: ${({ theme }) => theme.currentLine};
 `
@@ -33,7 +33,7 @@ export const Input = styled.input`
   font-size: 16px;
   box-sizing: border-box;
   transition: .5s;
-  border-radius: 25px 0 0 25px;
+  border-radius: 15px 0 0 15px;
   border: none;
   outline: none;
   padding: 0px 5px 0px 10px;
@@ -48,11 +48,11 @@ export const Button = styled.button`
   font-size: 14px;
   box-sizing: border-box;
   transition: .5s;
-  border-radius: 0px 25px 25px 0px;
+  border-radius: 0px 15px 15px 0px;
   border: none;
   outline: none;
   padding: 0 10px 0 5px;
-  background-color: ${({ theme }) => theme.comment};
+  background-color: ${({ theme }) => theme.background};
   color: white;
   
 `
