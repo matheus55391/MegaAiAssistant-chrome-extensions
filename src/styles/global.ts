@@ -26,7 +26,6 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.50s linear;
     color:${({ theme }) => theme.foreground};
   }
   body, html, #root {
