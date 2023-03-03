@@ -1,17 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { BottomWrapper, Button, ButtonIcon, Container, Input, Navbar, PageTitle } from "./styles";
 import { useSpeechSynthesis } from 'react-speech-kit';
-import axios from "axios";
 import { openai } from "../../config/openai";
+import { IMessage } from "../../interfaces/IMessage";
+import MessageWrapper from "../../components/MessageWrapper";
 
 export function Home() {
   const [text, setText] = useState('')
   const {speak, isPlaying} = useSpeechSynthesis()
   const [isLoading, setIsLoading] = useState(false)
+
   const handleClick = async () => {
     setIsLoading(true)
     try {
-      // // // console.log(text)
       const completion = await openai.createCompletion({
         model: "text-davinci-002",
         prompt: text,
@@ -28,13 +29,25 @@ export function Home() {
     setIsLoading(false)
   };
 
+  const messages: IMessage[] = [
+    {
+      isUserMessage: false,
+      text: "Oi como posso te ajudar?"
+    },
+    {
+      isUserMessage: true,
+      text: "Teste"
+    }
+  ]
+
+
   return (
     <Container>
       <Navbar>
-        <PageTitle>MEGAAIASSISTANT</PageTitle>
+        <PageTitle>Mega</PageTitle>
       </Navbar>
 
-
+      <MessageWrapper messages={messages}/>
 
       <BottomWrapper>
         <Input

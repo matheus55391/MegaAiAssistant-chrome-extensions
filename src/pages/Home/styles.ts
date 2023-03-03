@@ -23,7 +23,7 @@ export const BottomWrapper = styled.div`
   display: flex;
   margin-top: auto;
   padding: 8px;
-  height: 60px;
+  height: 80px;
   background: ${({ theme }) => theme.currentLine};
 `
 
